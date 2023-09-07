@@ -4,9 +4,9 @@
 [ext_resource path="res://Assets/Characters/Player/character_0000.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 11.5 )
+extents = Vector2( 6, 9.5 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=["player"]]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -17,5 +17,5 @@ position = Vector2( 0, -12 )
 texture = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -11.5 )
+position = Vector2( 0, -9.5 )
 shape = SubResource( 1 )

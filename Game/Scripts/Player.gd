@@ -33,3 +33,4 @@ func get_movement_vector():
 	moveVector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	moveVector.y = -1 if Input.is_action_just_pressed("jump") else 0
 	return moveVector
+
