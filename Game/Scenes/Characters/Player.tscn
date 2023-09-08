@@ -39,6 +39,7 @@ one_shot = true
 position = Vector2( 0, -12 )
 frames = SubResource( 2 )
 animation = "run"
+frame = 1
 playing = true
 
 [node name="Shape" type="CollisionShape2D" parent="."]
