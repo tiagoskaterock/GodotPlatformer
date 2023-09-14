@@ -13,5 +13,6 @@
 </p>
 
 <p align="center">
-  <img src="1.gif" alt="Game Runnig" />
+  <img src="1.gif" alt="Game Running" />
+  <img src="2.gif" alt="Game Running" />
 </p>
