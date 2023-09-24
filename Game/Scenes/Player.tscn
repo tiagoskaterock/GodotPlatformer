@@ -62,7 +62,6 @@ shape = SubResource( 4 )
 position = Vector2( 0, -12 )
 frames = SubResource( 2 )
 animation = "run"
-frame = 1
 playing = true
 
 [node name="PlayerShape" type="CollisionShape2D" parent="."]
