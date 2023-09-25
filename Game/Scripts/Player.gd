@@ -4,6 +4,8 @@ signal died
 
 enum State { NORMAL, DASHING }
 
+export(int, LAYERS_2D_PHYSICS) var dashHazardMask
+
 var gravity = 550
 var velocity = Vector2.ZERO
 var maxHorizontalSpeed = 120
@@ -15,10 +17,12 @@ var jumpTerminationMultiplier = 4
 var hasdoDubleJump = false
 var currentState = State.NORMAL
 var isStateNew = true
+var defaultHazardMask = 0
 
 
 func _ready():
 	$HazardArea.connect("area_entered", self, "on_hazard_area_entered")
+	defaultHazardMask = $HazardArea.collision_mask
 
 
 func _process(delta):	
@@ -36,6 +40,10 @@ func change_state(newState):
 	
 
 func proccess_normal(delta):
+	if(isStateNew) :
+		$DashArea/CollisionShape2D.disabled = true		
+		$HazardArea.collision_mask = defaultHazardMask
+		
 	var moveVector = get_movement_vector()
 	
 	velocity.x += moveVector.x * horizontalAcceleration * delta
@@ -75,7 +83,9 @@ func proccess_normal(delta):
 
 func proccess_dash(delta):
 	if(isStateNew):		
+		$DashArea/CollisionShape2D.disabled = false		
 		$AnimatedSprite.play("jump")
+		$HazardArea.collision_mask = dashHazardMask
 		var moveVector = get_movement_vector()
 		var velocityMod = 1
 		if(moveVector.x != 0):

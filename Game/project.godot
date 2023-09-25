@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Game"
-run/main_scene="res://Scenes/Main.tscn"
+run/main_scene="res://Scenes/BaseLevel.tscn"
 boot_splash/use_filter=false
 config/icon="res://icon.png"
 
@@ -86,6 +86,9 @@ dash={
 
 [layer_names]
 
+2d_physics/layer_1="terrain"
+2d_physics/layer_2="enemy"
+2d_physics/layer_17="enemy_hazard"
 2d_physics/layer_18="enemy_goal"
 2d_physics/layer_19="hazard"
 2d_physics/layer_20="pickup"

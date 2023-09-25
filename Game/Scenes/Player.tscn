@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Characters/Player/character_0000.png" type="Texture" id=2]
@@ -31,6 +31,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 9.5 )
 
+[sub_resource type="CircleShape2D" id=5]
+radius = 16.4924
+
 [node name="Player" type="KinematicBody2D" groups=["player"]]
 collision_layer = 0
 script = ExtResource( 1 )
@@ -51,8 +54,8 @@ position = Vector2( 0, -12 )
 shape = SubResource( 3 )
 
 [node name="HazardArea" type="Area2D" parent="."]
-collision_layer = 262144
-collision_mask = 262144
+collision_layer = 0
+collision_mask = 327680
 
 [node name="HazardShape" type="CollisionShape2D" parent="HazardArea"]
 position = Vector2( 0, -9 )
@@ -67,3 +70,11 @@ playing = true
 [node name="PlayerShape" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -9.5 )
 shape = SubResource( 1 )
+
+[node name="DashArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DashArea"]
+position = Vector2( 0, -12 )
+shape = SubResource( 5 )
