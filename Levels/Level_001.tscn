@@ -44,13 +44,13 @@ position = Vector2( 736, -240 )
 position = Vector2( 1200, -16 )
 
 [node name="Coin" parent="Collectibles" index="0" instance=ExtResource( 5 )]
-position = Vector2( 312, -16 )
+position = Vector2( 312, -32 )
 
 [node name="Coin2" parent="Collectibles" index="1" instance=ExtResource( 5 )]
-position = Vector2( 344, -16 )
+position = Vector2( 344, -40 )
 
 [node name="Coin3" parent="Collectibles" index="2" instance=ExtResource( 5 )]
-position = Vector2( 376, -16 )
+position = Vector2( 376, -32 )
 
 [node name="Coin4" parent="Collectibles" index="3" instance=ExtResource( 5 )]
 position = Vector2( 616, -64 )
