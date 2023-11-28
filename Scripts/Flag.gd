@@ -16,5 +16,5 @@ func _ready():
 
 
 func on_area_entered(_area2d):
-	print('player_won')
-	# emit_signal('player_won')
+	# print('player_won')
+	emit_signal('player_won')

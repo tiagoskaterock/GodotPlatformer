@@ -17,7 +17,7 @@ func _ready():
 func coinCollected():
 	colletedCoins += 1
 	print(totalCoins, " - " ,colletedCoins)
-	emit_signal("coin_total_changed", totalCoins, colletedCoins)	
+	emit_signal("coin_total_changed", totalCoins, colletedCoins)
 	
 	
 func coinTotalChanged(newTotal):
