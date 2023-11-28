@@ -18,6 +18,8 @@ var hasdoDubleJump = false
 var currentState = State.NORMAL
 var isStateNew = true
 var defaultHazardMask = 0
+var canDash = true
+var canDoubleJump = false
 
 
 func _ready():
@@ -53,7 +55,7 @@ func proccess_normal(delta):
 		
 	velocity.x = clamp(velocity.x, -maxHorizontalSpeed, maxHorizontalSpeed)
 	
-	if(moveVector.y < 0 and (is_on_floor() or ! $CoyoteTimer.is_stopped() or hasdoDubleJump)):
+	if(moveVector.y < 0 and (is_on_floor() or ! $CoyoteTimer.is_stopped() or (hasdoDubleJump and canDoubleJump))):
 		velocity.y = moveVector.y * jumpSpeed
 		if( ! is_on_floor() and $CoyoteTimer.is_stopped()):
 			hasdoDubleJump = false
@@ -73,9 +75,11 @@ func proccess_normal(delta):
 		
 	if(is_on_floor()):
 		hasdoDubleJump = true
+		canDash = true
 		
-	if(Input.is_action_just_pressed("dash")):
+	if(Input.is_action_just_pressed("dash") and canDash and is_on_floor()):
 		call_deferred("change_state", State.DASHING)
+		canDash = false
 	
 	update_animation()
 	update_sprite_direction()
