@@ -4,8 +4,7 @@ var player_scene = preload("res://Scenes/Player.tscn")
 var spawn_position = Vector2.ZERO
 var current_player_node = null
 
-func _ready():
-	print($Player.global_position)
+func _ready():	
 	spawn_position = $Player.global_position
 	register_player($Player)
 	

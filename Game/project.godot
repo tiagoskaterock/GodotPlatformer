@@ -88,6 +88,7 @@ dash={
 
 2d_physics/layer_1="terrain"
 2d_physics/layer_2="enemy"
+2d_physics/layer_6="flag"
 2d_physics/layer_17="enemy_hazard"
 2d_physics/layer_18="enemy_goal"
 2d_physics/layer_19="hazard"
