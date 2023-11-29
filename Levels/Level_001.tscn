@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Enemy_01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/BaseLevel.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/EnemyGoal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Flag.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/EnemySpawner.tscn" type="PackedScene" id=7]
 
 [node name="Level_001" instance=ExtResource( 2 )]
 
@@ -23,7 +24,6 @@ position = Vector2( 784, -240 )
 
 [node name="Enemy_02" parent="Enemies" index="2" instance=ExtResource( 1 )]
 position = Vector2( 464, 0 )
-start_direction = 1
 
 [node name="EnemyGoal" parent="EnemyGoalsGroup" index="0" instance=ExtResource( 4 )]
 position = Vector2( 248, 24 )
@@ -114,3 +114,6 @@ position = Vector2( 1016, 80 )
 
 [node name="Player" parent="." index="7"]
 position = Vector2( -40, -40 )
+
+[node name="EnemySpawner" parent="." index="9" instance=ExtResource( 7 )]
+position = Vector2( 80, -32 )
