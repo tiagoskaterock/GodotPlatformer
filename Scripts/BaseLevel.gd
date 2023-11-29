@@ -11,7 +11,8 @@ var colletedCoins = 0
 func _ready():	
 	spawn_position = $Player.global_position
 	register_player($Player)
-	coinTotalChanged(get_tree().get_nodes_in_group("coin").size())	
+	coinTotalChanged(get_tree().get_nodes_in_group("coin").size())
+	$Flag.connect("player_won", self, "on_player_won")
 	
 	
 func coinCollected():
@@ -40,3 +41,7 @@ func create_player():
 func on_player_died():
 	current_player_node.queue_free()
 	create_player()
+	
+
+func on_player_won():
+	$"/root/LevelManager".increment_level()
