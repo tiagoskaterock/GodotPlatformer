@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Tilemap/tiles_packed.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Camera.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://UI/LevelUi.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/BaseLevel.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Flag.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/LevelComplete.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
@@ -152,6 +153,7 @@ points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
 
 [node name="BaseLevel" type="Node2D" groups=["base_level"]]
 script = ExtResource( 5 )
+levelCompleteScene = ExtResource( 7 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 15 )
